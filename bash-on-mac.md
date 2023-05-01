@@ -8,3 +8,6 @@
 - add shell into file: ```sudo nano /etc/shells```
 	- ```which bash``` add location to folder
 - ```chsh -s /opt/homebrew/bin/bash```
+
+## problem
+```-bash not found```. Reinsall brew adn it should work.

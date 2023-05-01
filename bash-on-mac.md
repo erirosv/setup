@@ -4,7 +4,7 @@
 - install brew
 - ```brew install bash```
 - ```brew install```
-- ```cssh``` - change the shell 
+- ```chsh``` - change the shell 
 - add shell into file: ```sudo nano /etc/shells```
 	- ```which bash``` add location to folder
 - ```chsh -s /opt/homebrew/bin/bash:wq```

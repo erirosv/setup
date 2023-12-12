@@ -16,36 +16,49 @@ Git erbjuder flera fördelar, inklusive:
 
 Här är några grundläggande Git-kommandon för att komma igång:
 
+Initialiserar ett nytt Git-repositorium i den aktuella katalogen.
 ```markdown 
-git init: Initialiserar ett nytt Git-repositorium i den aktuella katalogen.
+git init
 ```
 
+Klonar ett befintligt Git-repositorium från en given URL.
 ```markdown 
-git clone [URL]: Klonar ett befintligt Git-repositorium från en given URL.
+git clone [URL]
 ```
 
+Lägger till en fil i den så kallade "staging area" för att förbereda för en commit.
 ```markdown 
-git add [fil]: Lägger till en fil i den så kallade "staging area" för att förbereda för en commit.
+git add [fil]
 ```
 
+Sparar ändringarna i koden med ett beskrivande meddelande.
 ```markdown 
-git commit -m "Meddelande": Sparar ändringarna i koden med ett beskrivande meddelande.
+git commit -m "Meddelande"
 ```
 
+Hämtar och integrerar ändringar från ett fjärrrepositorium till det lokala.
 ```markdown 
-git pull: Hämtar och integrerar ändringar från ett fjärrrepositorium till det lokala.
+git pull
 ```
 
+Hämtar ändringar från ett fjärrrepositorium till det lokala repositoriet. Det viktiga att notera är att **git fetch** inte automatiskt sammanfogar (merge) de hämtade ändringarna med den aktuella grenen. Istället uppdateras endast den lokala referensen till de fjärranlagda grenarna.
 ```markdown 
-git push: Skickar ändringar från det lokala repositoriet till det fjärranlagda repositoriet.
+git fetch
 ```
 
+Skickar ändringar från det lokala repositoriet till det fjärranlagda repositoriet.
 ```markdown 
-git branch: Visar befintliga grenar och den aktuella grenen.
+git push
 ```
 
+Visar befintliga grenar och den aktuella grenen.
 ```markdown 
-git merge [gren]: Slår samman ändringar från en specifik gren till den aktuella grenen.
+git branch
+```
+
+Slår samman ändringar från en specifik gren till den aktuella grenen.
+```markdown 
+git merge [gren]
 ```
 Detta är bara några grundläggande kommandon. Nästa kapitel kommer att utforska GitLab, en plattform som bygger på Git för att underlätta samarbete och projektadministration.
 

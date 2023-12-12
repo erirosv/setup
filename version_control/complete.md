@@ -18,12 +18,33 @@ Här är några grundläggande Git-kommandon för att komma igång:
 
 ```markdown 
 git init: Initialiserar ett nytt Git-repositorium i den aktuella katalogen.
+```
+
+```markdown 
 git clone [URL]: Klonar ett befintligt Git-repositorium från en given URL.
+```
+
+```markdown 
 git add [fil]: Lägger till en fil i den så kallade "staging area" för att förbereda för en commit.
+```
+
+```markdown 
 git commit -m "Meddelande": Sparar ändringarna i koden med ett beskrivande meddelande.
+```
+
+```markdown 
 git pull: Hämtar och integrerar ändringar från ett fjärrrepositorium till det lokala.
+```
+
+```markdown 
 git push: Skickar ändringar från det lokala repositoriet till det fjärranlagda repositoriet.
+```
+
+```markdown 
 git branch: Visar befintliga grenar och den aktuella grenen.
+```
+
+```markdown 
 git merge [gren]: Slår samman ändringar från en specifik gren till den aktuella grenen.
 ```
 Detta är bara några grundläggande kommandon. Nästa kapitel kommer att utforska GitLab, en plattform som bygger på Git för att underlätta samarbete och projektadministration.

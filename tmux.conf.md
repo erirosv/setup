@@ -9,7 +9,8 @@ set -g prefix `
 bind-key ` last-window
 bind-key e send-prefix
 
-set -g mouse on
+# to get the mouse to work for tmux 
+set -g mouse off
 
 # set shell
 set -g default-shell /opt/homebrew/bin/bash

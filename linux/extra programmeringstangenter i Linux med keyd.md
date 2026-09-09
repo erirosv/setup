@@ -164,6 +164,12 @@ VC Keymap: us
 X11 Layout: se
 ```
 
+```text
+System Locale: LANG=en_US.UTF-8
+VC Keymap: se
+X11 Layout: se
+```
+
 Om du använder svensk layout kan det vara nödvändigt att använda andra keycodes i keyd-konfigurationen.
 
 Använd då:

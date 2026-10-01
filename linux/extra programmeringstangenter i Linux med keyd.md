@@ -4,11 +4,11 @@ Den här guiden visar hur du använder **keyd** för att lägga till tangenter s
 
 Fokus ligger framför allt på programmeringstecken:
 
-| Kombination | Resultat |
-|---|---|
-| `Alt + ,` | `<` |
-| `Alt + .` | `>` |
-| `Alt + -` | `|` |
+| Kombination | Resultat |   |
+| ----------- | -------- | - |
+| `Alt + ,`   | `<`      |   |
+| `Alt + .`   | `>`      |   |
+| `Alt + -`   | `        | ` |
 
 ---
 
@@ -164,6 +164,8 @@ VC Keymap: us
 X11 Layout: se
 ```
 
+eller:
+
 ```text
 System Locale: LANG=en_US.UTF-8
 VC Keymap: se
@@ -206,7 +208,116 @@ journalctl -u keyd -f
 
 ---
 
-# 9. Komplett minimal konfiguration
+# 9. Stäng av keyd tillfälligt
+
+Om du bara vill **stänga av keyd just nu**, men behålla installationen och konfigurationen:
+
+```bash
+sudo systemctl stop keyd
+```
+
+Kontrollera:
+
+```bash
+systemctl status keyd
+```
+
+Nu ska keyd inte längre påverka tangentbordet.
+
+### Starta keyd igen
+
+```bash
+sudo systemctl start keyd
+```
+
+Detta är användbart om du vill jämföra HHKB:n med och utan keyd.
+
+---
+
+# 10. Inaktivera keyd vid uppstart
+
+Om du inte längre vill att keyd ska starta automatiskt när CachyOS startar:
+
+```bash
+sudo systemctl disable keyd
+```
+
+Detta **stänger inte nödvändigtvis av en redan körande keyd-process**.
+
+För att både stoppa den nu och förhindra att den startar vid nästa boot:
+
+```bash
+sudo systemctl disable --now keyd
+```
+
+Kontrollera:
+
+```bash
+systemctl status keyd
+```
+
+Du kan senare aktivera den igen med:
+
+```bash
+sudo systemctl enable --now keyd
+```
+
+---
+
+# 11. Ta bort keyd helt
+
+Om du vill ta bort keyd från systemet:
+
+Först stoppar och inaktiverar du tjänsten:
+
+```bash
+sudo systemctl disable --now keyd
+```
+
+Ta sedan bort paketet:
+
+```bash
+sudo pacman -Rns keyd
+```
+
+Om du även vill ta bort din keyd-konfiguration:
+
+```bash
+sudo rm -rf /etc/keyd
+```
+
+### Kontrollera
+
+```bash
+systemctl status keyd
+```
+
+Det är normalt att systemet då säger att tjänsten inte finns.
+
+---
+
+# 12. Skillnaden mellan stoppa, inaktivera och avinstallera
+
+| Kommando                            | Effekt                                   |
+| ----------------------------------- | ---------------------------------------- |
+| `sudo systemctl stop keyd`          | Stoppar keyd just nu                     |
+| `sudo systemctl start keyd`         | Startar keyd igen                        |
+| `sudo systemctl disable keyd`       | Hindrar keyd från att starta automatiskt |
+| `sudo systemctl enable keyd`        | Låter keyd starta automatiskt igen       |
+| `sudo systemctl disable --now keyd` | Stoppar keyd + hindrar autostart         |
+| `sudo pacman -Rns keyd`             | Avinstallerar keyd                       |
+
+### Rekommenderat om du bara vill stänga av det
+
+```bash
+sudo systemctl disable --now keyd
+```
+
+Det är det enklaste sättet att tillfälligt stänga av hela lösningen utan att radera konfigurationen.
+
+---
+
+# 13. Komplett minimal konfiguration
 
 Den kompletta filen `/etc/keyd/default.conf` är:
 
@@ -220,7 +331,7 @@ M-- = |
 
 ---
 
-# 10. Rekommenderad vidareutveckling för HHKB
+# 14. Rekommenderad vidareutveckling för HHKB
 
 När detta fungerar kan fler programmeringstecken läggas till.
 
@@ -264,7 +375,7 @@ Det är särskilt användbart på HHKB eftersom tangentbordet har färre fysiska
 
 ---
 
-## Snabbkommandon
+# 15. Snabbkommandon
 
 ### Installera
 
@@ -296,6 +407,30 @@ sudo keyd reload
 sudo systemctl restart keyd
 ```
 
+### Stoppa
+
+```bash
+sudo systemctl stop keyd
+```
+
+### Inaktivera autostart
+
+```bash
+sudo systemctl disable keyd
+```
+
+### Stoppa + inaktivera
+
+```bash
+sudo systemctl disable --now keyd
+```
+
+### Aktivera igen
+
+```bash
+sudo systemctl enable --now keyd
+```
+
 ### Kontrollera status
 
 ```bash
@@ -316,7 +451,7 @@ journalctl -u keyd -b
 
 ---
 
-## Resultat
+# Resultat
 
 Efter installationen ska HHKB kunna användas som vanligt, men med de extra programmeringstangenterna:
 

@@ -1,5 +1,25 @@
 # HHKB – extra programmeringstangenter i Linux med keyd
 
+Config:
+
+```ini
+[ids]
+*
+[main]
+leftalt = layer(programming)
+
+[programming:A]
+comma = 102nd
+dot = S-102nd
+slash = G-102nd
+7 = G-7
+8 = G-8
+9 = G-9
+0 = G-0
+```
+
+---
+
 Den här guiden visar hur du använder **keyd** för att lägga till tangenter som saknas eller är svåra att skriva på ett HHKB i Linux.
 
 Fokus ligger framför allt på programmeringstecken:
@@ -36,30 +56,22 @@ Skapa konfigurationsfilen:
 sudo nano /etc/keyd/default.conf
 ```
 
-Lägg in:
+Config:
 
 ```ini
+[ids]
+*
 [main]
+leftalt = layer(programming)
 
-M-, = <
-M-. = >
-M-- = |
-```
-
-### Vad betyder `M-`?
-
-`M-` betyder **Meta**, vilket normalt motsvarar `Alt`.
-
-Exempel:
-
-```ini
-M-, = <
-```
-
-betyder:
-
-```text
-Alt + , → <
+[programming:A]
+comma = 102nd
+dot = S-102nd
+slash = G-102nd
+7 = G-7
+8 = G-8
+9 = G-9
+0 = G-0
 ```
 
 ---

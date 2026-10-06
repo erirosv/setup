@@ -1,0 +1,25 @@
+{
+    "ollama_url": "http://localhost:11434",
+
+    "device": "auto",
+
+    "models": [
+        "qwen3:8b",
+        "llama3.1:8b",
+        "gemma3:12b"
+    ],
+
+    "prompt": "Explain the difference between TCP and UDP.\n\nRequirements:\n- Explain the main technical differences.\n- Give three practical examples where TCP is preferable.\n- Give three practical examples where UDP is preferable.\n- Be technically accurate.\n- Structure the answer clearly.",
+
+    "benchmark": {
+        "monitor_interval": 0.1,
+        "request_timeout": 600,
+        "keep_alive": 0
+    },
+
+    "results": {
+        "directory": "results",
+        "csv": "benchmark.csv",
+        "json": "benchmark.json"
+    }
+}
